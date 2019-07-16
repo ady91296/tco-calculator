@@ -87,9 +87,9 @@ var ct1 = 0;
 				  database();
 					var u = <%= i%>;
 					var w = '<%= session[:value]["database_type"][i-1] if session[:value]["database_type"].present?%>'
-					var t = <%= session[:value]["database_proc_number"][i-1] if session[:value]["database_proc_number"].present?%>
-					var r = <%= session[:value]["database_number"][i-1] if session[:value]["database_core_number"].present?%>
-					var k = <%= session[:value]["database_core_number"][i-1] if session[:value]["database_core_number"].present?%>
+					var t = '<%= session[:value]["database_proc_number"][i-1] if session[:value]["database_proc_number"].present?%>'
+					var r = '<%= session[:value]["database_number"][i-1] if session[:value]["database_core_number"].present?%>'
+					var k = '<%= session[:value]["database_core_number"][i-1] if session[:value]["database_core_number"].present?%>'
 					var o = '<%= session[:value]["database_server_type"][i-1] if session[:value]["database_server_type"].present?%>'
 					var s = '<%= session[:value]["database_server_os"][i-1] if session[:value]["database_server_os"].present?%>'
 					var q = '<%= session[:value]["azure_database"][i-1] if session[:value]["azure_database"].present?%>'

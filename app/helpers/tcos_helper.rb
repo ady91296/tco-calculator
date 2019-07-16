@@ -8,29 +8,38 @@ module TcosHelper
 		@total_cost_cloud = []
 		@total_database_cost = []
 	  for i in 0...(session[:value]["server_number"].count - 1)
-			servers = session[:value]["server_number"][i]
+			servers = session[:value]["server_number"][i] 
 			core = session[:value]["server_core_number"][i]
 			pro = session[:value]["server_proc_number"][i]
 			ram = session[:value]["server_ram_size"][i]
-			os = session[:value]["server_os"][i]
-			if session[:value]["server_gpu"][i] == "k80"
-				gpu = data["k80"]
+			if servers == "" || core == "" || pro == "" || ram == ""
+				@total_assumed_each << 0
+				@total_cost_cloud << 0
 			else
-				gpu = data["m60"]
+				os = session[:value]["server_os"][i]
+				if session[:value]["server_gpu"][i] == "k80"
+					gpu = data["k80"]
+				else
+					gpu = data["m60"]
+				end
+				cpu = core.to_i * pro.to_i
+				it_admin = 8*240*50
+				machine_cost,data_center = find_values(cpu,ram)
+				electricity = 0.1 * machine_cost["power_rating"]
+				rack = data["data_center_cost_per_rack"] * machine_cost["rack"]
+				overhead_cost = it_admin + electricity + rack
+				@total_assumed_each << (machine_cost["cost"] * servers.to_i) + overhead_cost + gpu.to_i
+				@total_cost_cloud << data_center["cost"] * servers.to_i
 			end
-			cpu = core.to_i * pro.to_i
-			it_admin = 8*240*50
-			machine_cost,data_center = find_values(cpu,ram)
-			electricity = 0.1 * machine_cost["power_rating"]
-			rack = data["data_center_cost_per_rack"] * machine_cost["rack"]
-			overhead_cost = it_admin + electricity + rack
-			@total_assumed_each << (machine_cost["cost"] * servers.to_i) + overhead_cost + gpu.to_i
-			@total_cost_cloud << data_center["cost"] * servers.to_i
 		end
 		for i in 0...(session[:value]["database_type"].count - 1)
 			data_base_core = session[:value]["database_core_number"][i]
-			database =  (data["sql_server_enterprise_licence_cost_per_2_cores"]+data["sql_server_standard_licence_cost_per_2_cores"]+data["enterprise_software_assurance_cost_per_2_cores"]+data["standard_software_assurance_cost_per_2_cores"])/2
-			@total_database_cost << data_base_core.to_i * database.to_i
+			if data_base_core == ""
+				@total_database_cost << 0
+			else
+				database =  (data["sql_server_enterprise_licence_cost_per_2_cores"]+data["sql_server_standard_licence_cost_per_2_cores"]+data["enterprise_software_assurance_cost_per_2_cores"]+data["standard_software_assurance_cost_per_2_cores"])/2
+				@total_database_cost << data_base_core.to_i * database.to_i
+			end
 		end
 		if session[:value]["bandwidth_type"] == "GB"
 			@network = data["service_provider_cost_per_gb"].to_f * session[:value]["bandwidth"].to_f

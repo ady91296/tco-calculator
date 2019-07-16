@@ -95,17 +95,16 @@
 				<% for i in 1...a %>
 				  server();
 					var u = <%= i%>;
-					var w = <%= session[:value]["server_number"][i-1] if session[:value]["server_number"].present?%>
-					var t = <%= session[:value]["server_proc_number"][i-1] if session[:value]["server_proc_number"].present?%>
-					var y = <%= session[:value]["server_ram_size"][i-1] if session[:value]["server_ram_size"].present?%>
-					var k = <%= session[:value]["server_core_number"][i-1] if session[:value]["server_core_number"].present?%>
+					var w = '<%= session[:value]["server_number"][i-1] if session[:value]["server_number"].present?%>'
+					var t = '<%= session[:value]["server_proc_number"][i-1] if session[:value]["server_proc_number"].present?%>'
+					var y = '<%= session[:value]["server_ram_size"][i-1] if session[:value]["server_ram_size"].present?%>'
+					var k = '<%= session[:value]["server_core_number"][i-1] if session[:value]["server_core_number"].present?%>'
 					var l = '<%= session[:value]["server_workload"][i-1] if session[:value]["server_workload"].present?%>'
 					var o = '<%= session[:value]["server_type"][i-1] if session[:value]["server_type"].present?%>'
 					var s = '<%= session[:value]["server_os"][i-1] if session[:value]["server_os"].present?%>'
 					var q = '<%= session[:value]["server_compute_type"][i-1] if session[:value]["server_compute_type"].present?%>'
 					var z = '<%= session[:value]["server_gpu"][i-1] if session[:value]["server_gpu"].present?%>'
 					var t = '<%= session[:value]["server_ram_size"][i-1] if session[:value]["server_ram_size"].present?%>'
-					debugger;
 					a = $(`#${u}`);
 					a.find("#server_number_").val(w);
 					a.find("#server_proc_number_").val(t);

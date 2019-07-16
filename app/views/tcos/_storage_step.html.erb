@@ -72,10 +72,10 @@
 					var u = <%= i%>;
 					var w = '<%= session[:value]["storage_type"][i-1] if session[:value]["storage_type"].present?%>'
 					var t = '<%= session[:value]["disk_type"][i-1] if session[:value]["disk_type"].present?%>'
-					var r = <%= session[:value]["capacity"][i-1] if session[:value]["capacity"].present?%>
-					var k = <%= session[:value]["backup"][i-1] if session[:value]["backup"].present?%>
-					var z = <%= session[:value]["archive"][i-1] if session[:value]["archive"].present?%>
-					var q = <%= session[:value]["IOPS"][i-1] if session[:value]["IOPS"].present?%>
+					var r = '<%= session[:value]["capacity"][i-1] if session[:value]["capacity"].present?%>'
+					var k = '<%= session[:value]["backup"][i-1] if session[:value]["backup"].present?%>'
+					var z = '<%= session[:value]["archive"][i-1] if session[:value]["archive"].present?%>'
+					var q = '<%= session[:value]["IOPS"][i-1] if session[:value]["IOPS"].present?%>'
 					a = $(`#${u}`);
 					a.find("#storage_type_").val(w);
 					a.find("#disk_type_").val(t);
