@@ -1,0 +1,124 @@
+<h4>Define your workloads</h4>
+		Enter the details of your on-premises workloads. This information will be used to understand your current TCO and recommended services in Azure.
+
+<h4>Servers</h4>
+		Enter the details of your on-premises server infrastructure. After adding a workload, select the workload type and enter the remaining details.
+
+<div id="server"></div>
+		<p id="addnew_server">
+			<a href="javascript:server()" class="add_server">Add</a>
+		</p>
+<div id="newlinktpl" style="display:none">
+	<div>
+		<table border=0>
+			<tr>
+				<th>Workload</th>
+				<th>Environment</th>
+				<th>Operating System</th>
+				<th>Server</th>
+				<th>Procs per server</th>
+				<th>Core(s) per proc</th>
+			</tr>
+			<tr>
+				<td>
+					<%= select_tag 'server_workload[]' , options_for_select(["Windows/Linux","Web App"])%>
+				<td>
+					<%= select_tag 'server_type[]' , options_for_select(["Physical Server","Virtual Machines"])%>
+				</td>
+				<td>
+					<%= select_tag 'server_os[]' , options_for_select(["Windows","Linux"])%>
+				</td>
+				<td>
+					<%= number_field_tag 'server_number[]'%>
+				</td>
+				<td>
+					<%= number_field_tag 'server_proc_number[]'%>
+				</td>
+				<td>
+					<%= number_field_tag 'server_core_number[]'%>
+				</td>
+			</tr>
+			<tr>
+				<th>RAM</th>
+				<th>Optimized By</th>
+				<th>GPU</th>
+				<th></th>
+			</tr>
+			<tr>
+				<td>
+					<%= number_field_tag 'server_ram_size[]'%>
+				</td>
+				<td>
+					<%= select_tag 'server_compute_type[]', options_for_select(["CPU","Memory"])%>
+				</td>
+				<td>
+					<%= select_tag 'server_gpu[]', options_for_select(["K80","M60"])%>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<input type="hidden" id="server_status" name="server_status">
+</div>
+
+<script>
+	$("input").each(function() {
+	   var element = $(this);
+	   if (element.val() == "") {
+	      $('#server_status').val('')
+	   }
+	});
+	var ct = 0;
+	function server()
+	{
+		ct++;
+		var div1 = document.createElement('div');
+		div1.id = ct;
+		// link to delete extended form elements
+		var delLink = '<div style="text-align:right;margin-right:65px"><a href="javascript:del_server('+ ct +')">Delete</a></div>';
+		div1.innerHTML = document.getElementById('newlinktpl').innerHTML + delLink;
+		document.getElementById('server').appendChild(div1);
+	}
+	// function to delete the newly added set of elements
+	function del_server(eleId)
+	{
+		d = document;
+		var ele = d.getElementById(eleId);
+		var parentEle = d.getElementById('server');
+		parentEle.removeChild(ele);
+	}
+
+
+	$( document ).ready(function() {
+		<% if session[:value].present?%>;
+			<% a = session[:value]["server_workload"].count if session[:value]["server_workload"].present?%>
+			<%if !a.nil?%>
+				<% for i in 1...a %>
+				  server();
+					var u = <%= i%>;
+					var w = <%= session[:value]["server_number"][i-1] if session[:value]["server_number"].present?%>
+					var t = <%= session[:value]["server_proc_number"][i-1] if session[:value]["server_proc_number"].present?%>
+					var y = <%= session[:value]["server_ram_size"][i-1] if session[:value]["server_ram_size"].present?%>
+					var k = <%= session[:value]["server_core_number"][i-1] if session[:value]["server_core_number"].present?%>
+					var l = '<%= session[:value]["server_workload"][i-1] if session[:value]["server_workload"].present?%>'
+					var o = '<%= session[:value]["server_type"][i-1] if session[:value]["server_type"].present?%>'
+					var s = '<%= session[:value]["server_os"][i-1] if session[:value]["server_os"].present?%>'
+					var q = '<%= session[:value]["server_compute_type"][i-1] if session[:value]["server_compute_type"].present?%>'
+					var z = '<%= session[:value]["server_gpu"][i-1] if session[:value]["server_gpu"].present?%>'
+					var t = '<%= session[:value]["server_ram_size"][i-1] if session[:value]["server_ram_size"].present?%>'
+					debugger;
+					a = $(`#${u}`);
+					a.find("#server_number_").val(w);
+					a.find("#server_proc_number_").val(t);
+					a.find("#server_ram_size_").val(y);
+					a.find("#server_core_number_").val(k);
+					a.find("#server_workload_").val(l)
+					a.find("#server_type_").val(o);
+					a.find("#server_os_").val(s);
+					a.find("#server_compute_type_").val(q);
+					a.find("#server_gpu_").val(z);
+					a.find("#server_ram_size_").val(t);
+				<%end%>
+			<%end%>
+		<%end%>
+	 });
+	</script>

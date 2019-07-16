@@ -1,0 +1,237 @@
+data:
+  electricity_cost: 0.1
+  k80: 5000
+  m60: 6000
+
+
+  software_cost:
+    windows: 
+      - core: 1
+        liscense_cost: 385
+      - core: 2
+        liscense_cost: 769
+      - core: 4
+        liscense_cost: 1539
+      - core: 8
+        liscense_cost: 3078
+      - core: 16
+        liscense_cost: 6155
+      - core: 32
+        liscense_cost: 12310
+      - core: 64
+        liscense_cost: 24620
+      - core: 128
+        liscense_cost: 49240
+
+    linux: 
+      cost: 0
+
+  data_center_cost_per_rack: 285240
+  data_center_life: 20
+  rack_unit_per_rack: 42
+
+  sql_server_enterprise_licence_cost_per_2_cores: 14255.99
+  sql_server_standard_licence_cost_per_2_cores:  3717
+  enterprise_software_assurance_cost_per_2_cores: 3545.95
+  standard_software_assurance_cost_per_2_cores:  929.25
+  mysql_licence_cost_per_server: 0
+  network_hardware_cost_percent_software_cost: 25
+  network_hardware_maintenance_percent_software_cost: 20
+  service_provider_cost_per_gb: 0.2
+
+  per_virtual_machine_per_month: 52
+  virtual_machine density: 2
+  average utilization: 100
+  vm_virtualization_liscense: 3495
+  hper_v: 0
+
+
+  storage:
+    procurement_cost/GB_for_local_disk/SAN-SSD: 3
+    procurement_cost/GB _for_local_disk/SAN-HDD: 2
+    procurement_cost/GB_for_NAS/file_storage: 2
+    procurement_cost/GB_for_blob_storage: 2
+    annual_enterprise_storage_software_support_cost: 10
+    cost_per_tape_drive: 4500
+
+  it_labour:
+    physical_servers_managed by_administrator: 387
+    virtual_machines_managed by_administrator: 516
+    hourly_rate_administrator: 49.99
+
+
+  machine:
+    - core: 1
+      ram: 0.75
+      proc: 1
+      cost: 1173
+      power_rating: 105
+      rack: 1
+    - core: 1
+      ram: 1.75
+      proc: 1
+      cost: 1178
+      power_rating: 156
+      rack: 1
+    - core: 1
+      ram: 2
+      proc: 1
+      cost: 1415
+      power_rating: 156
+      rack: 1
+    - core: 1
+      ram: 3.5
+      proc: 1
+      cost: 1424
+      power_rating: 156
+      rack: 1
+    - core: 2
+      ram: 3.5
+      proc: 1
+      cost: 1684
+      power_rating: 156
+      rack: 1
+    - core: 4
+      ram: 7
+      proc: 1
+      cost: 1951
+      power_rating: 166
+      rack: 1
+    - core: 1
+      ram: 4
+      proc: 2
+      cost: 4332
+      power_rating: 160
+      rack: 1
+    - core: 1
+      ram: 7
+      proc: 2
+      cost: 4350.01
+      power_rating: 170
+      rack: 1
+    - core: 1
+      ram: 14
+      proc: 2
+      cost: 4392
+      power_rating: 180
+      rack: 1
+    - core: 2
+      ram: 8
+      proc: 2
+      cost: 6199
+      power_rating: 166
+      rack: 1
+    - core: 2
+      ram: 14
+      proc: 2
+      cost: 6235.01
+      power_rating: 250
+      rack: 1
+    - core: 2
+      ram: 28
+      proc: 2
+      cost: 6319
+      power_rating: 318
+      rack: 1
+    - core: 4
+      ram: 14
+      proc: 2
+      cost: 6964
+      power_rating: 324
+      rack: 2
+    - core: 4
+      ram: 16
+      proc: 2
+      cost: 7169
+      power_rating: 324
+      rack: 2
+    - core: 2
+      ram: 28
+      proc: 4
+      cost: 14551
+      power_rating: 400
+      rack: 2
+    - core: 2
+      ram: 56
+      proc: 4
+      cost: 14719
+      power_rating: 500
+      rack: 2
+    - core: 4
+      ram: 32
+      proc: 4
+      cost: 16732
+      power_rating: 800
+      rack: 3
+    - core: 4
+      ram: 56
+      proc: 4
+      cost: 16876
+      power_rating: 900
+      rack: 3
+    - core: 4
+      ram: 112
+      proc: 4
+      cost: 17212
+      power_rating: 1000
+      rack: 3
+    - core: 6
+      ram: 112
+      proc: 4
+      cost: 19416
+      power_rating: 1100
+      rack: 3
+    - core: 8
+      ram: 112
+      proc: 4
+      cost: 21558
+      power_rating: 1200
+      rack: 4
+    - core: 8
+      ram: 224
+      proc: 4
+      cost: 23732
+      power_rating: 1100
+      rack: 4
+    - core: 8
+      ram: 448
+      proc: 8
+      cost: 27455
+      power_rating: 1200
+      rack: 4
+    - core: 6
+      ram: 64
+      proc: 2
+      cost: 8806
+      power_rating: 682.3
+      rack: 4
+    - core: 8
+      ram: 64
+      proc: 2
+      cost: 14105
+      power_rating: 682.3
+      rack: 4
+    - core: 10
+      ram: 128
+      proc: 2
+      cost: 14125
+      power_rating: 652.3
+      rack: 4
+    - core: 16
+      ram: 256
+      proc: 2
+      cost: 21764
+      power_rating: 1002.3
+      rack: 4
+    - core: 32
+      ram: 1000
+      proc: 2
+      cost: 35365
+      power_rating: 2004.6
+      rack: 4
+    - core: 32
+      ram: 2000
+      proc: 4
+      cost: 98785
+      power_rating: 3006.9
+      rack: 5

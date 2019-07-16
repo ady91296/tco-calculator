@@ -1,0 +1,113 @@
+<h4>Databases</h4>
+		Enter the details of your on-premises database infrastructure. After adding a database, enter the details of your on-premises database infrastructure in the Source section. In the Destination section, select the Azure service you would like to use.
+
+
+<div id="database"></div>
+<p id="addnew_database">
+	<a href="javascript:database()">Add</a>
+</p>
+
+<div id="newlinktpl1" style="display:none">
+	<div>
+		<table class="table table-hover">
+			<h4>Source</h4>
+			<tr>
+				<th>Database</th>
+				<th>Environment</th>
+				<th>Operating System</th>
+				<th>Server</th>
+				<th>Procs per server</th>
+				<th>Core(s) per proc</th>
+			</tr>
+			<tr>
+				<td>
+					<%= select_tag 'database_type[]' , options_for_select(["Microsoft SQL Server","MySQL","PostGre SQL"])%>
+				</td>
+				<td>
+					<%= select_tag 'database_server_type[]' , options_for_select(["Physical Server","Virtual Machines"])%>
+				</td>
+				<td>
+					<%= select_tag 'database_server_os[]' , options_for_select(["Windows","Linux"])%>
+				</td>
+				<td>
+					<%= number_field_tag 'database_number[]', min: "1"%>
+				</td>
+				<td>
+					<%= number_field_tag 'database_proc_number[]', min: "1"%>
+				</td>
+				<td>
+					<%= number_field_tag 'database_core_number[]', min: "1"%>
+				</td>
+			</tr>
+		</table>
+		<table>
+			<h4>Destination</h4>
+			<tr>
+				<th>Service</th>
+				<th>Max Concurrent Login</th>
+			</tr>
+			<tr>
+				<td>
+					<%= select_tag 'azure_database[]', options_for_select(["Azure Database for MySQL"])%>
+				</td>
+				<td>
+					<%= number_field_tag 'database_concurrent_login[]', min: "1"%>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<script type="text/javascript">
+
+var ct1 = 0;
+	function database()
+	{
+		ct1++;
+		var div1 = document.createElement('div');
+		div1.id = ct1;
+		// link to delete extended form elements
+		var delLink = '<div style="text-align:right;margin-right:65px"><a href="javascript:del_database('+ ct1 +')">Delete</a></div>';
+		div1.innerHTML = document.getElementById('newlinktpl1').innerHTML + delLink;
+		document.getElementById('database').appendChild(div1);
+	}
+	// function to delete the newly added set of elements
+	function del_database(eleId)
+	{
+		d = document;
+		var ele = d.getElementById(eleId);
+		var parentEle = d.getElementById('database');
+		parentEle.removeChild(ele);
+	}
+	$( document ).ready(function() {
+		<% if session[:value].present?%>
+			<% a = session[:value]["database_type"].count if session[:value]["database_type"].present?%>
+			<%if !a.nil?%>
+				<% for i in 1...a %>
+				  database();
+					var u = <%= i%>;
+					var w = '<%= session[:value]["database_type"][i-1] if session[:value]["database_type"].present?%>'
+					var t = <%= session[:value]["database_proc_number"][i-1] if session[:value]["database_proc_number"].present?%>
+					var r = <%= session[:value]["database_number"][i-1] if session[:value]["database_core_number"].present?%>
+					var k = <%= session[:value]["database_core_number"][i-1] if session[:value]["database_core_number"].present?%>
+					var o = '<%= session[:value]["database_server_type"][i-1] if session[:value]["database_server_type"].present?%>'
+					var s = '<%= session[:value]["database_server_os"][i-1] if session[:value]["database_server_os"].present?%>'
+					var q = '<%= session[:value]["azure_database"][i-1] if session[:value]["azure_database"].present?%>'
+					var z = <%= session[:value]["database_concurrent_login"][i-1] if session[:value]["database_concurrent_login"].present?%>
+					a = $(`#${u}`);
+					a.find("#database_type_").val(w);
+					a.find("#database_proc_number_").val(t);
+					a.find("#database_number_").val(r);
+					a.find("#database_core_number_").val(k);
+					a.find("#database_server_type_").val(o);
+					a.find("#database_server_os_").val(s);
+					a.find("#azure_database_").val(q);
+					a.find("#database_concurrent_login_").val(z);
+				<%end%>
+			<%end%>
+		<%end%>
+	 })
+	</script>
+
+
+

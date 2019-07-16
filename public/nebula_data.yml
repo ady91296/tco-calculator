@@ -1,0 +1,538 @@
+cloud_data:
+  - cpu: 1 
+    ram: 2   
+    cost: 223.38
+  - cpu: 2 
+    ram: 4   
+    cost: 438
+  - cpu: 4 
+    ram: 8 
+    cost: 893.52
+  - cpu: 8 
+    ram: 16  
+    cost: 1787.04
+  - cpu: 16
+    ram: 32  
+    cost: 3574.08
+  - cpu: 2 
+    ram: 0.5   
+    cost: 45.552
+  - cpu: 2 
+    ram: 1   
+    cost: 91.104
+  - cpu: 2 
+    ram: 2   
+    cost: 182.208
+  - cpu: 2 
+    ram: 4   
+    cost: 364.416
+  - cpu: 2 
+    ram: 8   
+    cost: 728.832
+  - cpu: 4 
+    ram: 16    
+    cost: 1457.664
+  - cpu: 8 
+    ram: 32    
+    cost: 2915.328
+  - cpu: 2 
+    ram: 0.5   
+    cost: 41.172
+  - cpu: 2 
+    ram: 1   
+    cost: 82.344
+  - cpu: 2 
+    ram: 2   
+    cost: 164.688
+  - cpu: 2 
+    ram: 4   
+    cost: 329.376
+  - cpu: 2 
+    ram: 8   
+    cost: 658.752
+  - cpu: 4 
+    ram: 16    
+    cost: 1317.504
+  - cpu: 8 
+    ram: 32    
+    cost: 2635.008
+  - cpu: 1 
+    ram: 0.5   
+    cost: 50.808
+  - cpu: 1 
+    ram: 1   
+    cost: 101.616
+  - cpu: 1 
+    ram: 2 
+    cost: 201.48
+  - cpu: 2 
+    ram: 4   
+    cost: 406.464
+  - cpu: 2 
+    ram: 8   
+    cost: 812.928
+  - cpu: 4 
+    ram: 16    
+    cost: 1625.856
+  - cpu: 8 
+    ram: 32    
+    cost: 3251.712
+  - cpu: 2 
+    ram: 8 
+    cost: 840.96
+  - cpu: 4 
+    ram: 16    
+    cost: 1681.92
+  - cpu: 8 
+    ram: 32    
+    cost: 3363.84
+  - cpu: 16
+    ram: 64    
+    cost: 6727.68
+  - cpu: 32
+    ram: 128   
+    cost: 13455.36
+  - cpu: 48
+    ram: 192   
+    cost: 20183.04
+  - cpu: 64
+    ram: 256   
+    cost: 26910.72
+  - cpu: 96
+    ram: 384   
+    cost: 40366.08
+  - cpu: 96
+    ram: 384   
+    cost: 40366.08
+  - cpu: 2 
+    ram: 8   
+    cost: 753.36
+  - cpu: 4 
+    ram: 16    
+    cost: 1506.72
+  - cpu: 8 
+    ram: 32    
+    cost: 3013.44
+  - cpu: 16
+    ram: 64    
+    cost: 6026.88
+  - cpu: 32
+    ram: 128   
+    cost: 12053.76
+  - cpu: 48
+    ram: 192   
+    cost: 18080.64
+  - cpu: 64
+    ram: 256   
+    cost: 24107.52
+  - cpu: 96
+    ram: 384   
+    cost: 36161.28
+  - cpu: 2 
+    ram: 8   
+    cost: 902.28
+  - cpu: 4 
+    ram: 16    
+    cost: 1804.56
+  - cpu: 8 
+    ram: 32    
+    cost: 3609.12
+  - cpu: 16
+    ram: 64    
+    cost: 7218.24
+  - cpu: 48
+    ram: 192   
+    cost: 21654.72
+  - cpu: 96
+    ram: 384   
+    cost: 43309.44
+  - cpu: 2 
+    ram: 8   
+    cost: 989.88
+  - cpu: 4 
+    ram: 16    
+    cost: 1979.76
+  - cpu: 8 
+    ram: 32    
+    cost: 3959.52
+  - cpu: 16
+    ram: 64     
+    cost: 7919.04
+  - cpu: 32
+    ram: 128    
+    cost: 15838.08
+  - cpu: 48
+    ram: 192    
+    cost: 23757.12
+  - cpu: 64
+    ram: 256    
+    cost: 31676.16
+  - cpu: 96
+    ram: 384    
+    cost: 47514.24
+  - cpu: 96
+    ram: 384     
+    cost: 7514.24
+  - cpu: 2 
+    ram: 8  
+    cost: 876
+  - cpu: 4 
+    ram: 16   
+    cost: 1752
+  - cpu: 8 
+    ram: 32   
+    cost: 3504
+  - cpu: 16
+    ram: 64   
+    cost: 7008
+  - cpu: 40
+    ram: 160
+    cost: 17520
+  - cpu: 64
+    ram: 256  
+    cost: 28032
+  - cpu: 2 
+    ram: 4    
+    cost: 744.6
+  - cpu: 4 
+    ram: 8    
+    cost: 1489.2
+  - cpu: 8 
+    ram: 16     
+    cost: 2978.4
+  - cpu: 16
+    ram: 32     
+    cost: 5956.8
+  - cpu: 36
+    ram: 72     
+    cost: 13402.8
+  - cpu: 48
+    ram: 96     
+    cost: 17870.4
+  - cpu: 72
+    ram: 144    
+    cost: 26805.6
+  - cpu: 96
+    ram: 192    
+    cost: 35740.8
+  - cpu: 96
+    ram: 192    
+    cost: 35740.8
+  - cpu: 2 
+    ram: 4    
+    cost: 840.96
+  - cpu: 4 
+    ram: 8    
+    cost: 1681.92
+  - cpu: 8 
+    ram: 16     
+    cost: 3363.84
+  - cpu: 16
+    ram: 32     
+    cost: 6727.68
+  - cpu: 36
+    ram: 72     
+    cost: 15137.28
+  - cpu: 72
+    ram: 144    
+    cost: 30274.56
+  - cpu: 2 
+    ram: 5.25    
+    cost: 946.08
+  - cpu: 4 
+    ram: 10.5    
+    cost: 1892.16
+  - cpu: 8 
+    ram: 21    
+    cost: 3784.32
+  - cpu: 16
+    ram: 42    
+    cost: 7568.64
+  - cpu: 36
+    ram: 96    
+    cost: 17029.44
+  - cpu: 72
+    ram: 192   
+    cost: 34058.88
+  - cpu: 2 
+    ram: 3.75  
+    cost: 876
+  - cpu: 4 
+    ram: 7.5   
+    cost: 1743.24
+  - cpu: 8 
+    ram: 15    
+    cost: 3486.48
+  - cpu: 16
+    ram: 30    
+    cost: 6972.96
+  - cpu: 36
+    ram: 60    
+    cost: 13937.16
+  - cpu: 8 
+    ram: 61    
+    cost: 26805.6
+  - cpu: 32
+    ram: 244   
+    cost: 107222.4
+  - cpu: 64
+    ram: 488   
+    cost: 214444.8
+  - cpu: 96
+    ram: 768     
+    cost: 273417.12
+  - cpu: 4 
+    ram: 61  
+    cost: 7884
+  - cpu: 32
+    ram: 488 
+    cost: 63072
+  - cpu: 64
+    ram: 768   
+    cost: 126144
+  - cpu: 16
+    ram: 122   
+    cost: 9986.4
+  - cpu: 32
+    ram: 244   
+    cost: 19972.8
+  - cpu: 64
+    ram: 488   
+    cost: 39945.6
+  - cpu: 4 
+    ram: 30.5    
+    cost: 6570
+  - cpu: 64
+    ram: 976   
+    cost: 58420.44
+  - cpu: 12
+    ram: 8     
+    cost: 116840.88
+  - cpu: 4 
+    ram: 122 
+    cost: 7305.84
+  - cpu: 8 
+    ram: 244 
+    cost: 14611.68
+  - cpu: 16
+    ram: 488 
+    cost: 29223.36
+  - cpu: 32
+    ram: 976 
+    cost: 58446.72
+  - cpu: 64
+    ram: 1952   
+    cost: 116893.44
+  - cpu: 12
+    ram: 8 
+    cost: 233786.88
+  - cpu: 2 
+    ram: 16  
+    cost: 1103.76
+  - cpu: 4 
+    ram: 32  
+    cost: 2207.52
+  - cpu: 8 
+    ram: 64  
+    cost: 4415.04
+  - cpu: 16
+    ram: 128 
+    cost: 8830.08
+  - cpu: 32
+    ram: 256 
+    cost: 17660.16
+  - cpu: 48
+    ram: 384 
+    cost: 26490.24
+  - cpu: 64
+    ram: 512 
+    cost: 35320.32
+  - cpu: 96
+    ram: 768 
+    cost: 52980.48
+  - cpu: 96
+    ram: 768 
+    cost: 52980.48
+  - cpu: 2 
+    ram: 16  
+    cost: 989.88
+  - cpu: 4 
+    ram: 32  
+    cost: 1979.76
+  - cpu: 8 
+    ram: 64  
+    cost: 3959.52
+  - cpu: 16
+    ram: 128 
+    cost: 7919.04
+  - cpu: 32
+    ram: 256 
+    cost: 15838.08
+  - cpu: 48
+    ram: 384 
+    cost: 23757.12
+  - cpu: 64
+    ram: 512 
+    cost: 31676.16
+  - cpu: 96
+    ram: 768 
+    cost: 47514.24
+  - cpu: 2 
+    ram: 16  
+    cost: 1147.56
+  - cpu: 4 
+    ram: 32  
+    cost: 2295.12
+  - cpu: 8 
+    ram: 64  
+    cost: 4590.24
+  - cpu: 16
+    ram: 128    
+    cost: 9180.48
+  - cpu: 48
+    ram: 384    
+    cost: 27541.44
+  - cpu: 96
+    ram: 768    
+    cost: 55082.88
+  - cpu: 2 
+    ram: 16     
+    cost: 1261.44
+  - cpu: 4 
+    ram: 32     
+    cost: 2522.88
+  - cpu: 8 
+    ram: 64     
+    cost: 5045.76
+  - cpu: 16
+    ram: 128    
+    cost: 10091.52
+  - cpu: 32
+    ram: 256    
+    cost: 20183.04
+  - cpu: 48
+    ram: 384    
+    cost: 30274.56
+  - cpu: 64
+    ram: 512    
+    cost: 40366.08
+  - cpu: 96
+    ram: 768    
+    cost: 60549.12
+  - cpu: 96
+    ram: 768    
+    cost: 60549.12
+  - cpu: 2 
+    ram: 15.25     
+    cost: 1165.08
+  - cpu: 4 
+    ram: 30.5    
+    cost: 2330.16
+  - cpu: 8 
+    ram: 61    
+    cost: 4660.32
+  - cpu: 16
+    ram: 122   
+    cost: 9320.64
+  - cpu: 32
+    ram: 244   
+    cost: 18641.28
+  - cpu: 64
+    ram: 488   
+    cost: 37282.56
+  - cpu: 2 
+    ram: 16    
+    cost: 1629.36
+  - cpu: 4 
+    ram: 32    
+    cost: 3258.72
+  - cpu: 8 
+    ram: 64    
+    cost: 6517.44
+  - cpu: 12
+    ram: 96    
+    cost: 9776.16
+  - cpu: 24
+    ram: 192   
+    cost: 19552.32
+  - cpu: 48
+    ram: 384   
+    cost: 39104.64
+  - cpu: 48
+    ram: 384   
+    cost: 39104.64
+  - cpu: 2 
+    ram: 15.25   
+    cost: 1366.56
+  - cpu: 4 
+    ram: 30.5    
+    cost: 2733.12
+  - cpu: 8 
+    ram: 61    
+    cost: 5466.24
+  - cpu: 16
+    ram: 122   
+    cost: 10932.48
+  - cpu: 32
+    ram: 244   
+    cost: 21864.96
+  - cpu: 64
+    ram: 488   
+    cost: 43729.92
+  - cpu: 72
+    ram: 512   
+    cost: 43729.92
+  - cpu: 2 
+    ram: 16    
+    cost: 1979.76
+  - cpu: 4 
+    ram: 32    
+    cost: 3959.52
+  - cpu: 8 
+    ram: 64    
+    cost: 7919.04
+  - cpu: 12
+    ram: 96    
+    cost: 11878.56
+  - cpu: 24
+    ram: 192   
+    cost: 23757.12
+  - cpu: 48
+    ram: 384   
+    cost: 47514.24
+  - cpu: 96
+    ram: 768     
+    cost: 95028.48
+  - cpu: 8
+    ram: 32     
+    cost: 4099.68
+  - cpu: 16
+    ram: 64     
+    cost: 8199.36
+  - cpu: 32
+    ram: 128    
+    cost: 16398.72
+  - cpu: 64
+    ram: 256    
+    cost: 32797.44
+  - cpu: 4 
+    ram: 30.5     
+    cost: 6044.4
+  - cpu: 8 
+    ram: 61     
+    cost: 12088.8
+  - cpu: 16
+    ram: 122    
+    cost: 24177.6
+  - cpu: 36
+    ram: 244    
+    cost: 48355.2
+  - cpu: 8 
+    ram: 122    
+    cost: 14454
+  - cpu: 16
+    ram: 244  
+    cost: 28908
+  - cpu: 64
+    ram: 976    
+    cost: 115632

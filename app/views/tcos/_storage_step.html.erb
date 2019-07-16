@@ -1,0 +1,91 @@
+<h4>Storage</h4>
+		Enter the details of your on-premises storage infrastructure. After adding storage, select the storage type and enter the remaining details.
+
+<div id="storage"></div>
+		<p id="addnew_storage">
+			<a href="javascript:storage()">Add</a>
+		</p>
+<div id="newlinktpl2" style="display:none">
+	<div>
+		<table border=0>
+			<tr>
+				<th>Storage type</th>
+				<th>Disk type</th>
+				<th>Capacity</th>
+				<th>Backup</th>
+				<th>Archive</th>
+				<th>IOPS</th>
+			</tr>
+			<tr>
+				<td>
+					<%= select_tag 'storage_type[]' , options_for_select(["LocalDisk/SAN","NAS/File Share","Blob"])%>
+				<td>
+					<%= select_tag 'disk_type[]' , options_for_select(["SSD","HDD"])%>
+				</td>
+				<td>
+					<%= number_field_tag 'capacity[]'%>
+					<%= select_tag 'capacity_type[]' , options_for_select(["TB","GB"])%>
+				</td>
+				<td>
+					<%= number_field_tag 'backup[]'%>
+					<%= select_tag 'backup_type[]' , options_for_select(["TB","GB"])%>
+				</td>
+				<td>
+					<%= number_field_tag 'archive[]'%>
+					<%= select_tag 'archive_type[]' , options_for_select(["TB","GB"])%>
+				</td>
+				<td>
+					<%= number_field_tag 'IOPS[]'%>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var ct2 = 0;
+	function storage()
+	{
+		ct2++;
+		var div1 = document.createElement('div');
+		div1.id = ct2;
+		// link to delete extended form elements
+		var delLink = '<div style="text-align:right;margin-right:65px"><a href="javascript:del_storage('+ ct2 +')">Delete</a></div>';
+		div1.innerHTML = document.getElementById('newlinktpl2').innerHTML + delLink;
+		document.getElementById('storage').appendChild(div1);
+	}
+	// function to delete the newly added set of elements
+	function del_storage(eleId)
+	{
+		d = document;
+		var ele = d.getElementById(eleId);
+		var parentEle = d.getElementById('storage');
+		parentEle.removeChild(ele);
+	}
+
+	$( document ).ready(function() {
+		<% if session[:value].present?%>
+			<% a = session[:value]["storage_type"].count if session[:value]["storage_type"].present?%>
+			<%if !a.nil?%>
+				<% for i in 1...a %>
+				  storage();
+					var u = <%= i%>;
+					var w = '<%= session[:value]["storage_type"][i-1] if session[:value]["storage_type"].present?%>'
+					var t = '<%= session[:value]["disk_type"][i-1] if session[:value]["disk_type"].present?%>'
+					var r = <%= session[:value]["capacity"][i-1] if session[:value]["capacity"].present?%>
+					var k = <%= session[:value]["backup"][i-1] if session[:value]["backup"].present?%>
+					var z = <%= session[:value]["archive"][i-1] if session[:value]["archive"].present?%>
+					var q = <%= session[:value]["IOPS"][i-1] if session[:value]["IOPS"].present?%>
+					a = $(`#${u}`);
+					a.find("#storage_type_").val(w);
+					a.find("#disk_type_").val(t);
+					a.find("#capacity_").val(r);
+					a.find("#backup_").val(k);
+					a.find("#archive_").val(z);
+					a.find("#IOPS_").val(q);
+				<%end%>
+			<%end%>
+		<%end%>
+	 })
+
+</script>

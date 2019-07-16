@@ -1,0 +1,8 @@
+<%= form_tag :tcos do |f| %>
+  <%= render "#{@order.current_step}_step", :f => f %>
+  <p><%= submit_tag "Continue" %></p>
+  <p><%= submit_tag "Back", :remote => true,:name => "back_button" unless @order.first_step? %></p>
+<% end %>
+
+
+<p><%= link_to "Back to List", tcos_path %></p>

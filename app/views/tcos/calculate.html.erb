@@ -1,0 +1,20 @@
+<%= form_tag :tcos do%>
+<h4>Cost Comparision for an year</h4>
+<div>
+	<table>
+		<th>Your Cost</th>
+		<th>Nebula Cost</th>
+		<tr>
+			<td>
+				<p>$<%= @total_assumed %></p>
+			</td>
+			<td>
+				<p>$<%= @total_nebula%></p>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<%end%>
+
+<%= link_to "Reset" , reset_tcos_path%>
