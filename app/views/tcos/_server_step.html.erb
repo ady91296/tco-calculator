@@ -1,8 +1,13 @@
-<h4>Define your workloads</h4>
-		Enter the details of your on-premises workloads. This information will be used to understand your current TCO and recommended services in Azure.
+
+<div class="container">
+   <div class="registration">
+   	<h4>Define your workloads</h4>
+   	<br>
+		<h6 class="th">Enter the details of your on-premises workloads. This information will be used to understand your current TCO and recommended services in Azure.</h6>
 
 <h4>Servers</h4>
-		Enter the details of your on-premises server infrastructure. After adding a workload, select the workload type and enter the remaining details.
+<br>
+		<h6 class="th">Enter the details of your on-premises server infrastructure. After adding a workload, select the workload type and enter the remaining details.</h6>
 
 <div id="server"></div>
 		<p id="addnew_server">
@@ -10,48 +15,65 @@
 		</p>
 <div id="newlinktpl" style="display:none">
 	<div>
-		<table border=0>
+		<table border=0 ,class="table1">
 			<tr>
-				<th>Workload</th>
-				<th>Environment</th>
-				<th>Operating System</th>
-				<th>Server</th>
-				<th>Procs per server</th>
-				<th>Core(s) per proc</th>
+				<th  class="th">Workload</th>
+				<th  class="th">Environment</th>
+				<th  class="th">Operating System</th>
+				<th  class="th">Server</th>
+				<th  class="th">Procs per server</th>
+				<th  class="th">Core(s) per proc</th>
 			</tr>
 			<tr>
 				<td>
+					<br>
 					<%= select_tag 'server_workload[]' , options_for_select(["Windows/Linux","Web App"])%>
 				<td>
+										<br>
+
 					<%= select_tag 'server_type[]' , options_for_select(["Physical Server","Virtual Machines"])%>
 				</td>
 				<td>
+										<br>
+
 					<%= select_tag 'server_os[]' , options_for_select(["Windows","Linux"])%>
 				</td>
 				<td>
+										<br>
+
 					<%= number_field_tag 'server_number[]'%>
 				</td>
 				<td>
+										<br>
+
 					<%= number_field_tag 'server_proc_number[]'%>
 				</td>
 				<td>
+										<br>
+
 					<%= number_field_tag 'server_core_number[]'%>
 				</td>
+				<br>
 			</tr>
-			<tr>
-				<th>RAM</th>
-				<th>Optimized By</th>
-				<th>GPU</th>
-				<th></th>
+			<br>
+			<tr class="tr.spaceUnder">
+
+				<th  class="th">RAM</th>
+				<th  class="th">Optimized By</th>
+				<th  class="th">GPU</th>
+				<th  class="th"></th>
 			</tr>
 			<tr>
 				<td>
+					<br>
 					<%= number_field_tag 'server_ram_size[]'%>
 				</td>
 				<td>
+					<br>
 					<%= select_tag 'server_compute_type[]', options_for_select(["CPU","Memory"])%>
 				</td>
 				<td>
+					<br>
 					<%= select_tag 'server_gpu[]', options_for_select(["K80","M60"])%>
 				</td>
 			</tr>

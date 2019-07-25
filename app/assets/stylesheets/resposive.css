@@ -1,0 +1,21 @@
+@media (max-width: 1024px) {
+  .global-sec .col-4, .why-us .col-4 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .feature-block .col-3, .footer-top .col-4 {
+    width: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .col-4, .col-3 {
+    width: 100% !important;
+  }
+  .feature-section .feature-block li {
+    padding: 0px 0px 15px 0px;
+  }
+}
+/*# sourceMappingURL=resposive.css.map */

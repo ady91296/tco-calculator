@@ -1,37 +1,51 @@
+
+<div class="container">
+   <div class="registration">
+
 <h4>Storage</h4>
-		Enter the details of your on-premises storage infrastructure. After adding storage, select the storage type and enter the remaining details.
+<br>
+		<h6>Enter the details of your on-premises storage infrastructure. After adding storage, select the storage type and enter the remaining details.</h6>
 
 <div id="storage"></div>
-		<p id="addnew_storage">
+		<div id="addnew_storage" ,class="btn-tco" >
 			<a href="javascript:storage()">Add</a>
-		</p>
+		</div>
 <div id="newlinktpl2" style="display:none">
 	<div>
-		<table border=0>
+		<table border=0, class="table1">
 			<tr>
-				<th>Storage type</th>
-				<th>Disk type</th>
-				<th>Capacity</th>
-				<th>Backup</th>
-				<th>Archive</th>
-				<th>IOPS</th>
+				<th class="th"><h7>Storage type</h7></th>
+				<th class="th">Disk type</th>
+				<th class="th">Capacity</th>
+				<th class="th">Backup</th>
+				<th class="th">Archive</th>
+				<th class="th">IOPS</th>
 			</tr>
 			<tr>
 				<td>
 					<%= select_tag 'storage_type[]' , options_for_select(["LocalDisk/SAN","NAS/File Share","Blob"])%>
+
 				<td>
 					<%= select_tag 'disk_type[]' , options_for_select(["SSD","HDD"])%>
 				</td>
-				<td>
+				<td style="padding:20px">
+					<br>
 					<%= number_field_tag 'capacity[]'%>
+					<br>
 					<%= select_tag 'capacity_type[]' , options_for_select(["TB","GB"])%>
 				</td>
-				<td>
+				<td style="padding:10px">
+										<br>
+
 					<%= number_field_tag 'backup[]'%>
+					<br>
 					<%= select_tag 'backup_type[]' , options_for_select(["TB","GB"])%>
 				</td>
-				<td>
+				<td style="padding:20px">
+										<br>
+
 					<%= number_field_tag 'archive[]'%>
+					<br>
 					<%= select_tag 'archive_type[]' , options_for_select(["TB","GB"])%>
 				</td>
 				<td>

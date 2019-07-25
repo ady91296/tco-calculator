@@ -1,7 +1,9 @@
-<%= form_tag :tcos do%>
-<h4>Cost Comparision for an year</h4>
-<div>
-	<table>
+
+    <div class="container">
+      <div class="registration">
+        <h4>Cost Comparision for an year</h4>
+       <div class="col-12 field-wrap">
+           <table class="table1">
 		<th>Your Cost</th>
 		<th>Nebula Cost</th>
 		<tr>
@@ -13,8 +15,88 @@
 			</td>
 		</tr>
 	</table>
+          </div>
+            
+          
+           <div class="col-12 field-wrap">
+            <%= link_to "Reset", reset_tcos_path, class:"btn-tco" %>
+          </div>
+    </div>
 </div>
 
-<%end%>
 
-<%= link_to "Reset" , reset_tcos_path%>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<div id="container"></div>
+<style>
+#container {
+	min-width: 310px;
+	max-width: 800px;
+	height: 400px;
+	margin: 0 auto
+}
+</style>
+<script>
+	var asumed = <%=@total_assumed%>;
+	var nebula_cost= <%=@total_nebula%>;
+Highcharts.chart('container', {
+
+    title: {
+        text: ' '
+    },
+
+    subtitle: {
+        text: ' '
+    },
+
+    xAxis: {
+        title: {
+            text: ' Years'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 0
+        }
+    },
+
+    series: [{
+        name: 'Your Cost',
+        data: [0,asumed]
+    }, {
+        name: 'Nebula Cost',
+        data: [0,nebula_cost]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+</script>
+
+

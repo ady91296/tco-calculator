@@ -1,8 +1,24 @@
 <%= form_tag :tcos do |f| %>
   <%= render "#{@order.current_step}_step", :f => f %>
-  <p><%= submit_tag "Continue" %></p>
-  <p><%= submit_tag "Back", :remote => true,:name => "back_button" unless @order.first_step? %></p>
+    <div class="container">
+      <div class="registration">
+      	<br>
+            <button class="btn-tco">Continue</button>
+          </div>
+          <br>
+            <tr >
+             <%= submit_tag "Back", :remote => true,class:"btn-tco",:name => "back_button" unless @order.first_step?  %>
+          </tr>
+          <br>
+            <div >
+            	          <br>
+
+            <%= link_to "Back to List", tcos_path %>
+          </div>
+      </div>
+  </div>
+   
+ 
 <% end %>
 
 
-<p><%= link_to "Back to List", tcos_path %></p>

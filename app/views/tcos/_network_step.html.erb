@@ -1,12 +1,25 @@
-<h4>Networking</h4>
-		Enter the amount of network bandwidth you currently consume in your on-premises environment.
 
-<div id="network">
-	<th>Outbound Bandwidth</th>
-	<tr>
-		<td>
-			<%= number_field_tag 'bandwidth'%>
-			<%= select_tag 'bandwidth_type' , options_for_select(["TB","GB"])%>
-		</td>
-	</tr>
+
+<div class="container">
+   <div class="registration">
+      <h4>Networking</h4>
+      <br>
+      <h6>Enter the amount of network bandwidth you currently consume in your on-premises environment.</h6>
+      <br>
+      <h6 class="th">
+         Outbound Bandwidth</h6>
+         <br>
+         <div class="col-12 field-wrap">
+            <div class="row">
+               
+               <%= number_field_tag 'bandwidth'%>
+</div>            <div class="row">
+
+                  <%= select_tag 'bandwidth_type' , options_for_select(["TB","GB"]) %>              
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
+</div>
+
