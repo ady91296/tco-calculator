@@ -6,7 +6,7 @@ class Tco < ApplicationRecord
   end
   
   def steps
-    %w[ server database storage network]
+    %w[server database storage network]
   end
   
   def next_step
@@ -30,5 +30,8 @@ class Tco < ApplicationRecord
       self.current_step = step
       valid?
     end
+  end
+  def init_step
+    self.current_step = steps.first
   end
 end
