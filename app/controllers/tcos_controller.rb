@@ -7,13 +7,16 @@ class TcosController < ApplicationController
   def new
     session[:order_params] ||= {}
     @order = Tco.new(session[:order_params])
-    @order.current_step = session[:order_step]
   end
   
   def create
     session[:order_params] ||= {}
     @order = Tco.new(session[:order_params])
-    @order.current_step = session[:order_step]
+    if !session[:value].present?
+      @order.current_step = @order.init_step
+    else
+      @order.current_step = session[:order_step]
+    end
     session[:tco] = params
     session[:value] ||= {}
     session[:value].deep_merge!(session[:tco].to_enum.to_h) if session[:tco]
