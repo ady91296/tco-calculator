@@ -62,9 +62,15 @@ module TcosHelper
 	def find_values(c,r)
 		data = Value["cloud_data"].select{|cpu| cpu["cpu"] == c }
 		data_ram = data.select{|ram| r.to_f % ram["ram"].to_f == 0 }.first
+		if data_ram.nil?
+			ram = data.first
+		end
 		data_ram["times"] = r.to_i / data_ram["ram"]
 		cpu = Assume["data"]["machine"].select {|core| core["core"]*core["proc"] == c }
 		ram = cpu.select{|ram| r.to_f % ram["ram"].to_f == 0 }.first
+		if ram.nil?
+			ram = cpu.first
+		end
 		ram["times"] = r.to_i / ram["ram"]
 		return ram,data_ram
 	end
